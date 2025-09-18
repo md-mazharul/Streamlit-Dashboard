@@ -13,8 +13,8 @@ st.title("🎬 Movie Ratings — Age & Genre Explorer")
 # -----------------------------
 # Tries: 1) user upload, 2) your Windows path, 3) workspace upload path
 default_paths = [
-    Path(r"C:\Users\omibr\Downloads\movie_ratings.csv"),
-    Path("/mnt/data/movie_ratings.csv"),
+    Path(__file__).parent / "movie_ratings.csv",
+    Path(__file__).parent / "data" / "movie_ratings.csv",
 ]
 #uploaded = st.file_uploader("Upload movie_ratings.csv (optional)", type=["csv"])
 
@@ -281,5 +281,6 @@ with tab_year:
                           .reset_index(name="NumRatings"))
             fig_dec = px.bar(dec_counts, x="decade", y="NumRatings", title=None)
             st.plotly_chart(fig_dec, use_container_width=True)
+
 
 
