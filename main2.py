@@ -5,7 +5,7 @@ import streamlit as st
 import plotly.express as px
 from pathlib import Path
 
-st.set_page_config(page_title="Movie Ratings — Age & Genre", layout="wide")
+st.set_page_config(page_title="Movie Ratings", layout="wide")
 st.title("🎬 Movie Ratings — Age & Genre Explorer")
 
 # -----------------------------
@@ -281,4 +281,5 @@ with tab_year:
                           .reset_index(name="NumRatings"))
             fig_dec = px.bar(dec_counts, x="decade", y="NumRatings", title=None)
             st.plotly_chart(fig_dec, use_container_width=True)
+
 
